@@ -1,109 +1,160 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Martian+Mono:wght@100..800&display=swap');
-
+/* Reset básico para remover margens e paddings padrão do navegador */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
-.menu{
+
+/* Estilo do corpo da página */
+body {
+    background-color: #f4f4f4; /* Cinza claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contêiner principal para centralizar o conteúdo */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* --- Cabeçalho --- */
+header {
+    background-color: #007bff; /* Azul primário */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #0056b3;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
     display: flex;
-    justify-content: center ;
-    flex-direction: row;
-    list-style: none;   /* remove os dots */
-    color:black;
-    .background-color: blue;
-}
-nav{
-    display: flex; /* Permite organizar os elementos HTML*/
-    justify-content: space-between;
-    background-color:#f7f705;
-    padding: 10px 20px;
-}
-.logo{
-    font-size: 1.8rem;
-    color: #000000;
-    font-weight: bold;
-    font-family: "Didact Gothic", sans-serif;
-    
-}
-li{
-    padding: 12px 10px 5px 50px; /* dá um respiro dentro dos links */
-}
-a{ 
-    text-decoration: none; /* remove o sublinhado */
-    color: black;
-}
-body{
-    font-family: 'Poppins', sans-serif;
-
-}
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))
-  , url(https://grandesnomesdapropaganda.com.br/wp-content/uploads/2020/08/Casas-Bahia.jpg
-  ) no-repeat center center/cover;
-  text-align: center;
-  padding: 6rem 2rem;
-  color: #fff;
+    justify-content: center;
 }
 
-.barbearia-footer {
-    /* Fundo Carvão (Quase Preto, mas com um toque de cor) */
-    background-color: #1f1f1f; 
-    color: #dedede; /* Texto quase branco */
-    padding: 60px 25px 30px;
-    font-family: 'Georgia', serif; /* Fonte clássica/rústica */
+nav ul li {
+    margin: 0 15px;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-around; 
-    flex-wrap: wrap; 
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.footer-col {
-    margin-bottom: 30px;
-    min-width: 200px;
-}
-
-/* Estilo dos Títulos das Colunas */
-.barbearia-footer h4 {
-    font-size: 1.25em;
-    margin-bottom: 15px;
-    /* Destaque em Bronze Sutil (Mais elegante que o vermelho forte) */
-    border-bottom: 2px solid #a87d32; 
-    padding-bottom: 5px;
-    color: #fff;
-    letter-spacing: 1px; /* Espaçamento entre letras para toque premium */
-}
-
-/* Links e textos */
-.footer-links a, .footer-contact p, .footer-social a {
-    color: #b0b0b0; /* Texto em cinza suave */
+nav ul li a {
+    color: white;
     text-decoration: none;
-    line-height: 1.8;
-    transition: color 0.3s;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
 }
 
-/* Efeito hover: Usa o bronze/dourado de destaque */
-.barbearia-footer a:hover {
-    color: #d4a749; 
+nav ul li a:hover {
+    background-color: #0056b3;
+    border-radius: 5px;
 }
 
-/* Estilo do Copyright */
-.footer-info p:last-child {
-    font-size: 0.85em;
+/* --- Seção de Destaque --- */
+.destaque {
+    background-color: #ffffff;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.destaque h2 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: #28a745; /* Verde para Ação */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
     margin-top: 20px;
-    color: #777;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-/* Manutenção da Responsividade */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+.btn-cta:hover {
+    background-color: #1e7e34;
+}
+
+/* --- Seção de Produtos --- */
+.produtos h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.lista-produtos {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha se não couberem */
+}
+
+.produto {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px; /* Largura fixa para cada produto */
+    transition: transform 0.3s;
+}
+
+.produto:hover {
+    transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.produto h4 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.preco {
+    font-size: 1.2em;
+    color: #dc3545; /* Vermelho para Preço */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-compra {
+    display: block;
+    background-color: #ffc107; /* Amarelo para Compra */
+    color: #333;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-compra:hover {
+    background-color: #e0a800;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
 }
